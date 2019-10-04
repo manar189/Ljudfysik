@@ -7,8 +7,8 @@ public class FrequencyScript : MonoBehaviour
     //My microphone
     MicrophoneHandler microphone;
 
-    public const int qSamples = 8192;
-    public float threshold = 0.1f;  // minimum amplitude to extract pitch
+    public const int qSamples = 2048;
+    public float threshold = 0.01f;  // minimum amplitude to extract pitch
 
     public float pitchValue;    // sound pitch - Hz
 
@@ -30,7 +30,7 @@ public class FrequencyScript : MonoBehaviour
     void Update()
     {
         pitchValue = getFrequency();
-        ///Debug.Log( "pitch value: " + pitchValue);
+        Debug.Log( "pitch value: " + pitchValue);
     }
 
     float getFrequency()
@@ -41,7 +41,7 @@ public class FrequencyScript : MonoBehaviour
         for (int i = 0; i < qSamples / 2; ++i)
         {
             hps[i] += spectrum[i * 2];
-
+            
             if (i < qSamples / 3)
             {
                 hps[i] += +spectrum[i * 3];

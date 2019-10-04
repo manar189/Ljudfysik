@@ -386,7 +386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
   selectedDevice: 
-  useMicrophone: 1
+  useMicrophone: 0
 --- !u!82 &139802539
 AudioSource:
   m_ObjectHideFlags: 0
@@ -397,7 +397,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2cd278014c8d2ad4482521d7d60cfb86, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e3e2f04876b1cbb44a3fc5faa24dba15, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -501,8 +501,8 @@ MonoBehaviour:
   intensityMax: -15
   intensityMin: -30
   pitch: 0
-  pitchMax: 350
-  pitchMin: 0
+  pitchMax: 1600
+  pitchMin: 150
   scorePoints: {fileID: 1065962784}
   goodObject: {fileID: 10845039}
   badOject: {fileID: 1529092087}
