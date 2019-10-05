@@ -501,8 +501,8 @@ MonoBehaviour:
   intensityMax: -15
   intensityMin: -30
   pitch: 0
-  pitchMax: 350
-  pitchMin: 0
+  pitchMax: 800
+  pitchMin: 150
   scorePoints: {fileID: 1065962784}
   goodObject: {fileID: 10845039}
   badOject: {fileID: 1529092087}

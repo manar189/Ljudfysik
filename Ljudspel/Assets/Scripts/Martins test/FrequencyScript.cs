@@ -36,6 +36,7 @@ public class FrequencyScript : MonoBehaviour
     float getFrequency()
     {
         audioSource.GetSpectrumData(spectrum, 0, FFTWindow.BlackmanHarris);
+       // microphone.GetSpectrumData(spectrum, 0, FFTWindow.BlackmanHarris);
         // Creates harmonic product spectrum
         float[] hps = spectrum;
         for (int i = 0; i < qSamples / 2; ++i)

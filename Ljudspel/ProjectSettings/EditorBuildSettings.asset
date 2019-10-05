@@ -4,4 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Jonas lekstuga.unity
+    guid: b25cf3f3caa00a249882fb4a1662161b
+  - enabled: 1
+    path: Assets/Scenes/Martins lekstuga.unity
+    guid: 39cc2f63017dc5c40b01383900ebee46
+  - enabled: 1
+    path: Assets/Scenes/End Screen.unity
+    guid: dd3ffbc36a462b248b064922366d33a0
+  m_configObjects: {}

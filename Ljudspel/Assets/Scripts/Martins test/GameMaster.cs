@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameMaster : MonoBehaviour
 {
@@ -52,6 +53,12 @@ public class GameMaster : MonoBehaviour
     {
         score += a;
         scorePoints.GetComponent<UnityEngine.UI.Text>().text = score.ToString();
+
+        if(score == 10)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+
+        }
     }
 
     public void createNewScorePoint()
