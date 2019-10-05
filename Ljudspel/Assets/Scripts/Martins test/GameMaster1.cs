@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameMaster : MonoBehaviour
+public class GameMaster1 : MonoBehaviour
 {
     // Values for the game.
     public float intensityPercentage;
@@ -17,17 +17,19 @@ public class GameMaster : MonoBehaviour
     public float pitchMax = 300;
     public float pitchMin = 0;
 
-    int score = 0;
     public GameObject scorePoints;
     public GameObject goodObject;
     public GameObject badOject;
 
-    int fuling = 1;
-
+    
+    int goodScore;
+    int badScore;
     // Start is called before the first frame update
     void Start()
     {
         createNewScorePoint();
+        goodScore = 0;
+        badScore = 0;
     }
 
     // Update is called once per frame
@@ -49,38 +51,48 @@ public class GameMaster : MonoBehaviour
         return (value - min) / (max - min);
     }
 
-    public void changeScore(int a)
+    public void changeScore(bool goodFlag)
     {
-        score += a;
-        scorePoints.GetComponent<UnityEngine.UI.Text>().text = score.ToString();
-
-        if(score == 10)
+        //scorePoints.GetComponent<UnityEngine.UI.Text>().text = score.ToString();
+        if (!goodFlag) //We hit a badBoy
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+            badScore--;
+            if (badScore == -1)
+            {
+                SceneManager.LoadScene(4); //End scene
+            }
 
         }
+        else // Hit a good boy
+        {
+            if (goodScore == 3)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+        }
+
     }
 
     public void createNewScorePoint()
     {
-        if(fuling == 1)
+        if(goodScore == 0)
         {
-            Instantiate(goodObject, new Vector3(10, 10, 0), Quaternion.identity);
-            fuling++;
+            Instantiate(goodObject, new Vector3(9, 9, 0), Quaternion.identity);
+            goodScore++;
             return;
         }
 
-        if (fuling == 2)
+        if (goodScore == 1)
         {
-            Instantiate(goodObject, new Vector3(4, 7, 0), Quaternion.identity);
-            fuling++;
+            Instantiate(goodObject, new Vector3(10, 2, 0), Quaternion.identity);
+            goodScore++;
             return;
         }
 
-        if (fuling == 3)
+        if (goodScore == 2)
         {
-            Instantiate(goodObject, new Vector3(7, 10, 0), Quaternion.identity);
-            fuling = 1;
+            Instantiate(goodObject, new Vector3(2, 10, 0), Quaternion.identity);
+            goodScore++;
             return;
         }
     }

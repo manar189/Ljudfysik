@@ -25,16 +25,21 @@ public class FrequencyAnalyzer : MonoBehaviour
         float[] hps = spectrum; 
         for (int i = 0; i < qSamples/2; ++i)
         {
-            hps[i] += spectrum[i * 2];
+            hps[i] = Mathf.Abs( hps[i] * spectrum[i * 2]);
 
             if (i < qSamples / 3)
             {
-                hps[i] += +spectrum[i * 3];
+                hps[i] = Mathf.Abs(hps[i] * spectrum[i * 3]);
             }
 
             if (i < qSamples / 4)
             {
-                hps[i] += +spectrum[i * 4];
+                hps[i] = Mathf.Abs(hps[i] * spectrum[i * 4]);
+            }
+
+            if (i < qSamples / 5)
+            {
+                hps[i] = Mathf.Abs(hps[i] * spectrum[i * 5]);
             }
         }
 

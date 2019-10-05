@@ -6,12 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Jonas lekstuga.unity
+    path: Assets/Scenes/Start.unity
     guid: b25cf3f3caa00a249882fb4a1662161b
   - enabled: 1
-    path: Assets/Scenes/Martins lekstuga.unity
+    path: Assets/Scenes/Scene1.unity
     guid: 39cc2f63017dc5c40b01383900ebee46
+  - enabled: 1
+    path: Assets/Scenes/Scene2.unity
+    guid: 478daa80ee0eb6d4f84be6274642a6eb
   - enabled: 1
     path: Assets/Scenes/End Screen.unity
     guid: dd3ffbc36a462b248b064922366d33a0
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 7cfbb4fefb7dccb41b05333e1d86fa50
   m_configObjects: {}
